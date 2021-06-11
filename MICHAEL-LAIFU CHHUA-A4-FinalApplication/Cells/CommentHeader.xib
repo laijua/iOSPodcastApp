@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="commentHeader" rowHeight="147" id="aEj-B4-yYs" customClass="CommentHeader" customModule="MICHAEL_LAIFU_CHHUA_A4_FinalApplication" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="334" height="147"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aEj-B4-yYs" id="ZgO-gx-92a">
+                <rect key="frame" x="0.0" y="0.0" width="334" height="147"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timestamp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sHP-81-LMA">
+                        <rect key="frame" x="16" y="45" width="309" height="15"/>
+                        <fontDescription key="fontDescription" type="italicSystem" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="20T-Ih-DF5">
+                        <rect key="frame" x="296.5" y="120.5" width="31.5" height="26.5"/>
+                        <color key="tintColor" name="Teal"/>
+                        <state key="normal" image="arrowshape.turn.up.left.fill" catalog="system">
+                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="25"/>
+                        </state>
+                        <connections>
+                            <action selector="reply:" destination="-2" eventType="touchUpInside" id="11z-SZ-Lkf"/>
+                        </connections>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comment" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D4f-cP-m6Y">
+                        <rect key="frame" x="16" y="78" width="278" height="20.5"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IEb-Mn-kc6">
+                        <rect key="frame" x="245" y="118" width="41.5" height="29"/>
+                        <color key="tintColor" name="Teal"/>
+                        <state key="normal" image="arrowtriangle.right.fill.and.line.vertical.and.arrowtriangle.left.fill" catalog="system">
+                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="25"/>
+                        </state>
+                        <connections>
+                            <action selector="collapse:" destination="-1" eventType="touchUpInside" id="4vI-eb-YQZ"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jwX-ea-eK7">
+                        <rect key="frame" x="16" y="9" width="309" height="36"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                        <state key="normal" title="User">
+                            <color key="titleColor" name="Teal"/>
+                        </state>
+                        <connections>
+                            <action selector="usernameAction:" destination="-2" eventType="touchUpInside" id="JyD-G4-sJh"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="D4f-cP-m6Y" firstAttribute="leading" secondItem="ZgO-gx-92a" secondAttribute="leading" constant="16" id="2yR-ID-smn"/>
+                    <constraint firstItem="sHP-81-LMA" firstAttribute="leading" secondItem="ZgO-gx-92a" secondAttribute="leading" constant="16" id="B9U-Vh-VhT"/>
+                    <constraint firstAttribute="trailing" secondItem="20T-Ih-DF5" secondAttribute="trailing" constant="6" id="I3B-Os-GdM"/>
+                    <constraint firstAttribute="trailing" secondItem="D4f-cP-m6Y" secondAttribute="trailing" constant="40" id="NlZ-nG-TKD"/>
+                    <constraint firstAttribute="trailing" secondItem="jwX-ea-eK7" secondAttribute="trailing" constant="9" id="RRu-zL-tz3"/>
+                    <constraint firstItem="D4f-cP-m6Y" firstAttribute="top" secondItem="sHP-81-LMA" secondAttribute="bottom" constant="18" id="bTz-r0-E4D"/>
+                    <constraint firstAttribute="bottom" secondItem="20T-Ih-DF5" secondAttribute="bottom" id="bs4-Ki-eha"/>
+                    <constraint firstItem="20T-Ih-DF5" firstAttribute="leading" secondItem="IEb-Mn-kc6" secondAttribute="trailing" constant="10" id="cNG-gN-6Ma"/>
+                    <constraint firstItem="jwX-ea-eK7" firstAttribute="top" secondItem="ZgO-gx-92a" secondAttribute="top" constant="9" id="eAg-1P-JuL"/>
+                    <constraint firstItem="IEb-Mn-kc6" firstAttribute="top" relation="greaterThanOrEqual" secondItem="D4f-cP-m6Y" secondAttribute="bottom" constant="1" id="eWN-k7-fdO"/>
+                    <constraint firstItem="20T-Ih-DF5" firstAttribute="top" relation="greaterThanOrEqual" secondItem="D4f-cP-m6Y" secondAttribute="bottom" constant="1" id="gbJ-e3-zfs"/>
+                    <constraint firstAttribute="bottom" secondItem="IEb-Mn-kc6" secondAttribute="bottom" id="j30-Gj-8Lc"/>
+                    <constraint firstItem="IEb-Mn-kc6" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ZgO-gx-92a" secondAttribute="leading" constant="245" id="nvX-zU-Sia"/>
+                    <constraint firstAttribute="trailing" secondItem="sHP-81-LMA" secondAttribute="trailing" constant="9" id="rdc-49-uwT"/>
+                    <constraint firstItem="sHP-81-LMA" firstAttribute="top" secondItem="jwX-ea-eK7" secondAttribute="bottom" id="sYd-Ye-nEY"/>
+                    <constraint firstItem="jwX-ea-eK7" firstAttribute="leading" secondItem="ZgO-gx-92a" secondAttribute="leading" constant="16" id="spc-7r-sDW"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="collapse" destination="IEb-Mn-kc6" id="Ekx-fv-N2a"/>
+                <outlet property="collapseUIButton" destination="IEb-Mn-kc6" id="sdr-G8-lw8"/>
+                <outlet property="comment" destination="D4f-cP-m6Y" id="Kbb-Ul-LT7"/>
+                <outlet property="replyUIButton" destination="20T-Ih-DF5" id="Dqj-vj-1vR"/>
+                <outlet property="timestamp" destination="sHP-81-LMA" id="ncM-AA-wI9"/>
+                <outlet property="username" destination="jwX-ea-eK7" id="zZR-6L-H7D"/>
+            </connections>
+            <point key="canvasLocation" x="-439.13043478260875" y="-270.20089285714283"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="arrowshape.turn.up.left.fill" catalog="system" width="128" height="106"/>
+        <image name="arrowtriangle.right.fill.and.line.vertical.and.arrowtriangle.left.fill" catalog="system" width="128" height="89"/>
+        <namedColor name="Teal">
+            <color red="0.57200002670288086" green="0.76499998569488525" blue="0.76499998569488525" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
