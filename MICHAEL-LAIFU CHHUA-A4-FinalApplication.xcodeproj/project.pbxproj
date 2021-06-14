@@ -36,7 +36,6 @@
 		28BFC3F7263E34A70084A75A /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 28BFC3F6263E34A70084A75A /* FirebaseAuth */; };
 		28BFC3F9263E34A70084A75A /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 28BFC3F8263E34A70084A75A /* FirebaseFirestore */; };
 		28BFC3FB263E34A70084A75A /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 28BFC3FA263E34A70084A75A /* FirebaseFirestoreSwift-Beta */; };
-		28BFC3FE263E3BF90084A75A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 28BFC3FD263E3BF90084A75A /* GoogleService-Info.plist */; };
 		28BFC402263E409C0084A75A /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BFC401263E409C0084A75A /* Channel.swift */; };
 		28BFC405263E40E10084A75A /* Sender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BFC404263E40E10084A75A /* Sender.swift */; };
 		28BFC409263E414F0084A75A /* MessageKit in Frameworks */ = {isa = PBXBuildFile; productRef = 28BFC408263E414F0084A75A /* MessageKit */; };
@@ -56,6 +55,7 @@
 		CC9274A12667937E00ECC83D /* EnterUsernameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9274A02667937E00ECC83D /* EnterUsernameViewController.swift */; };
 		CC995FFD2670935E0025484B /* EmptyEpisodesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC995FFC2670935E0025484B /* EmptyEpisodesTableViewCell.swift */; };
 		CCA0DA70266B2B470016B95D /* ProfileSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA0DA6F266B2B470016B95D /* ProfileSearchTableViewController.swift */; };
+		CCB34AF2267758060080528C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CCB34AF1267758060080528C /* GoogleService-Info.plist */; };
 		CCF0817A2670E7D800C44900 /* forgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF081792670E7D800C44900 /* forgotPasswordViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -88,7 +88,6 @@
 		28BCA5C026367CFC0068822B /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		28BCA5C3263682F10068822B /* EpisodeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeTableViewCell.swift; sourceTree = "<group>"; };
 		28BF9C3E265CE0320083C3D9 /* SpinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
-		28BFC3FD263E3BF90084A75A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		28BFC401263E409C0084A75A /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
 		28BFC404263E40E10084A75A /* Sender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sender.swift; sourceTree = "<group>"; };
 		28BFC40B263E42F50084A75A /* ChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
@@ -107,6 +106,7 @@
 		CC9274A02667937E00ECC83D /* EnterUsernameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterUsernameViewController.swift; sourceTree = "<group>"; };
 		CC995FFC2670935E0025484B /* EmptyEpisodesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyEpisodesTableViewCell.swift; sourceTree = "<group>"; };
 		CCA0DA6F266B2B470016B95D /* ProfileSearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSearchTableViewController.swift; sourceTree = "<group>"; };
+		CCB34AF1267758060080528C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CCF081792670E7D800C44900 /* forgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = forgotPasswordViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -187,7 +187,7 @@
 				CC4BD8D9266B921F00A95A6E /* Delegate.swift */,
 				28BCA598263668090068822B /* Assets.xcassets */,
 				28BCA59A263668090068822B /* LaunchScreen.storyboard */,
-				28BFC3FD263E3BF90084A75A /* GoogleService-Info.plist */,
+				CCB34AF1267758060080528C /* GoogleService-Info.plist */,
 				28BCA59D263668090068822B /* Info.plist */,
 			);
 			path = "MICHAEL-LAIFU CHHUA-A4-FinalApplication";
@@ -304,7 +304,7 @@
 			files = (
 				28BCA59C263668090068822B /* LaunchScreen.storyboard in Resources */,
 				28DC00C62653AEAF000EF976 /* CommentHeader.xib in Resources */,
-				28BFC3FE263E3BF90084A75A /* GoogleService-Info.plist in Resources */,
+				CCB34AF2267758060080528C /* GoogleService-Info.plist in Resources */,
 				28BCA599263668090068822B /* Assets.xcassets in Resources */,
 				28BCA597263668010068822B /* Main.storyboard in Resources */,
 			);
@@ -512,7 +512,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "edu.monash.MICHAEL-LAIFU CHHUA-A4-FinalApplication";
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.monash.MICHAEL-LAIFU-CHHUA-A4-FinalApplication";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -533,7 +533,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "edu.monash.MICHAEL-LAIFU CHHUA-A4-FinalApplication";
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.monash.MICHAEL-LAIFU-CHHUA-A4-FinalApplication";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
