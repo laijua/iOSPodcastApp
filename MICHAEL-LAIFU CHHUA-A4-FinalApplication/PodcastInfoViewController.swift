@@ -81,7 +81,7 @@ class PodcastInfoViewController: UIViewController, UITableViewDelegate, UITableV
                 request.addValue(appDelegate.apiKey, forHTTPHeaderField: "X-ListenAPI-Key")
                 if request != nil{
                     let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-                        if let error = error{
+                        if let _ = error{
                             return
                         }
                         
@@ -109,7 +109,7 @@ class PodcastInfoViewController: UIViewController, UITableViewDelegate, UITableV
                                 guard let url = URL(string: image)
                                 else {return}
                                 let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-                                    if let error = error{
+                                    if let _ = error{
                                         return
                                     }
                                     if let data = data{
@@ -211,7 +211,7 @@ class PodcastInfoViewController: UIViewController, UITableViewDelegate, UITableV
         if let image = episode.image, let url = URL(string: image){
             
             let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-                if let error = error{
+                if let _ = error{
                     return
                 }
                 if let data = data{

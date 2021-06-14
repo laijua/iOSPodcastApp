@@ -46,7 +46,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             
             let database = Firestore.firestore()
             database.collection("usernames").getDocuments { [self] (querySnapshot, error) in
-                if let error = error{
+                if let _ = error{
                     return
                 }
                 if let snapshot = querySnapshot{

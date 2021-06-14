@@ -100,7 +100,7 @@ class AccountViewController: UIViewController, UICollectionViewDataSource, UICol
         super.viewWillAppear(animated)
         guard let username = username.text else {return}
         database.collection("usernames").whereField("username", isEqualTo: username).getDocuments { (querySnapshot, error) in
-            if let error = error{
+            if let _ = error{
                 return
             }
             else{
@@ -115,7 +115,7 @@ class AccountViewController: UIViewController, UICollectionViewDataSource, UICol
                 // add listeners
                 self.favouritePodcastDatabaseListener = self.database.collection("usernames").document(documentId).collection("favourites").addSnapshotListener() {
                     (querySnapshot, error) in
-                    if let error = error {
+                    if let _ = error {
                         return
                     }
                     guard let snapshot = querySnapshot else {
@@ -142,7 +142,7 @@ class AccountViewController: UIViewController, UICollectionViewDataSource, UICol
                 
                 self.followDatabaseListener = self.database.collection("usernames").document(documentId).collection("following").addSnapshotListener() {
                     (querySnapshot, error) in
-                    if let error = error {
+                    if let _ = error {
                         return
                     }
                     guard let snapshot = querySnapshot else {
@@ -192,7 +192,7 @@ class AccountViewController: UIViewController, UICollectionViewDataSource, UICol
         
         
         database.collection("channels").whereField("name", isEqualTo: roomName).getDocuments { (querySnapshot, error) in
-            if let error = error{
+            if let _ = error{
                 return
             }
             var documentId: String?
@@ -209,7 +209,7 @@ class AccountViewController: UIViewController, UICollectionViewDataSource, UICol
                 // the if else statements below is going to check if room exists already, else create it and switch views to it
                 if !doesExist{
                     self.database.collection("channels").whereField("name", isEqualTo: alternativeRoomName).getDocuments { (querySnapshot, error) in
-                        if let error = error{
+                        if let _ = error{
                             return
                         }
                       
@@ -333,7 +333,7 @@ class AccountViewController: UIViewController, UICollectionViewDataSource, UICol
             guard let appDelegate = appDelegate else {return}
             request.addValue(appDelegate.apiKey, forHTTPHeaderField: "X-ListenAPI-Key")
             let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-                if let error = error{
+                if let _ = error{
                     return
                 }
                 do{
@@ -400,7 +400,7 @@ class AccountViewController: UIViewController, UICollectionViewDataSource, UICol
         if let image = podcast?.image, let url = URL(string: image){
             
             let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-                if let error = error{
+                if let _ = error{
                     return
                 }
                 if let data = data{

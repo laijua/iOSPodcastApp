@@ -51,7 +51,7 @@ class RecommendationViewController: UIViewController, UICollectionViewDataSource
             guard let appDelegate = appDelegate else {return}
             request.addValue(appDelegate.apiKey, forHTTPHeaderField: "X-ListenAPI-Key")
             let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-                if let error = error{
+                if let _ = error{
                     return
                 }
                 do{
@@ -78,7 +78,7 @@ class RecommendationViewController: UIViewController, UICollectionViewDataSource
         // data for recommended podcasts
         // recommended podcast will update next time user logs into app, rather than changing in real time when they favourite a podcast
         database.collection("usernames").whereField("id", isEqualTo: appDelegate?.currentSender?.senderId).getDocuments { (querySnapshot, error) in
-            if let error = error{
+            if let _ = error{
                 return
             }
             var tempDocumentId: String?
@@ -88,7 +88,7 @@ class RecommendationViewController: UIViewController, UICollectionViewDataSource
             guard let documentId = tempDocumentId else {return}
             
             self.database.collection("usernames").document(documentId).collection("favourites").getDocuments { (querySnapshot, error) in
-                if let error = error{
+                if let _ = error{
                     return
                 }
                 var tempPodcastId: String?
@@ -109,7 +109,7 @@ class RecommendationViewController: UIViewController, UICollectionViewDataSource
                     guard let appDelegate = self.appDelegate else {return}
                     request.addValue(appDelegate.apiKey, forHTTPHeaderField: "X-ListenAPI-Key")
                     let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-                        if let error = error{
+                        if let _ = error{
                             return
                         }
                         do{
@@ -183,7 +183,7 @@ class RecommendationViewController: UIViewController, UICollectionViewDataSource
             if let image = podcast.image, let url = URL(string: image){
                 
                 let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-                    if let error = error{
+                    if let _ = error{
                         return
                     }
                     if let data = data{
@@ -210,7 +210,7 @@ class RecommendationViewController: UIViewController, UICollectionViewDataSource
         if let image = podcast.image, let url = URL(string: image){
             
             let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-                if let error = error{
+                if let _ = error{
                     return
                 }
                 if let data = data{

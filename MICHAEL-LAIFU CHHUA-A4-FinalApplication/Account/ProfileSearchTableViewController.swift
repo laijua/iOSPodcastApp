@@ -61,7 +61,7 @@ class ProfileSearchTableViewController: UITableViewController, UISearchBarDelega
         let database = Firestore.firestore()
         let usernameRef = database.collection("usernames")
         usernameRef.getDocuments { (querySnapshot, error) in
-            if let error = error{
+            if let _ = error{
                 return
             }
             var arrayOfUsers = [String]()

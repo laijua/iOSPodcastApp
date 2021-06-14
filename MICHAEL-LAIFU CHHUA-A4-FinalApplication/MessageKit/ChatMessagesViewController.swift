@@ -66,7 +66,7 @@ class ChatMessagesViewController: MessagesViewController,MessagesDataSource, Mes
         super.viewWillAppear(animated)
         databaseListener = channelRef?.order(by:"time").addSnapshotListener() {
             (querySnapshot, error) in
-            if let error = error {
+            if let _ = error {
                 
                 return
             }

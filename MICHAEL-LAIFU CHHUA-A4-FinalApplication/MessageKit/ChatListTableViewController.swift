@@ -40,7 +40,7 @@ class ChatListTableViewController: UITableViewController {
         // add listener for chat channels
         databaseListener = channelsRef?.addSnapshotListener() {
          (querySnapshot, error) in
-            if let error = error {
+            if let _ = error {
              return
             }
             self.channels.removeAll()

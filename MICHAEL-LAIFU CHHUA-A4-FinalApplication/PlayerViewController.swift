@@ -264,7 +264,7 @@ class PlayerViewController: UIViewController {
             
             
             let task = URLSession.shared.dataTask(with: imageURL) { (data, response, error) in
-                if let error = error{
+                if let _ = error{
                     return
                 }
                 if let data = data, let image = UIImage(data: data){

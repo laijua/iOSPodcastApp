@@ -56,7 +56,7 @@ class EnterUsernameViewController: UIViewController, UITextFieldDelegate {
             let user = Auth.auth().currentUser
             // delete account if the user dismisses the view
             user?.delete { error in
-              if let error = error {
+              if let _ = error {
                 return
               }
             }

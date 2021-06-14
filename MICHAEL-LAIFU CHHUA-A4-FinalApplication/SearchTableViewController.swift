@@ -77,7 +77,7 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate {
                 self.indicator.stopAnimating()
             }
             
-            if let error = error {
+            if let _ = error {
                 return
             }
             do {
@@ -144,7 +144,7 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate {
         
         if let image = result.image, let url = URL(string: image){
             let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-                if let error = error{
+                if let _ = error{
                     return
                 }
                 if let data = data{

@@ -42,11 +42,11 @@ class HomeTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        // adding a spinner in this view controller is pointless, theres too much asynchronous stuff, so you will see a cell telling you to search for podcast for a split second regardless.
+        let child = addSpin()
         // add listener that listens for podcast follow/unfollows and updates episode feeds accordingly
         guard let id = appDelegate?.currentSender?.senderId else{return}
         database.collection("usernames").whereField("id", isEqualTo: id).getDocuments { (querySnapshot, error) in
-            if let error = error{
+            if let _ = error{
                 return
             }
             else{
@@ -63,7 +63,7 @@ class HomeTableViewController: UITableViewController {
                 // add listeners
                 self.favouritePodcastDatabaseListener = self.database.collection("usernames").document(documentId).collection("favourites").addSnapshotListener() {
                     (querySnapshot, error) in
-                    if let error = error {
+                    if let _ = error {
                         return
                     }
                     guard let snapshot = querySnapshot else {
@@ -83,7 +83,7 @@ class HomeTableViewController: UITableViewController {
                             self.tableView.reloadData()
                         }
                     }
-                    
+                    self.removeSpin(child)
                     self.requestEpisodes()
                 }
             }
@@ -100,13 +100,19 @@ class HomeTableViewController: UITableViewController {
     
     
     private func requestEpisodes(){
+        let child = addSpin()
+        if idOfPodcastFollowed.count == 0{
+            removeSpin(child)
+        }
+        
+        
         for id in idOfPodcastFollowed{
             if let url = URL(string: "https://listen-api.listennotes.com/api/v2/podcasts/\(id)"){
                 var request = URLRequest(url: url)
                     guard let appDelegate = appDelegate else {return}
                     request.addValue(appDelegate.apiKey, forHTTPHeaderField: "X-ListenAPI-Key")
                 let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-                    if let error = error{
+                    if let _ = error{
                         return
                     }
                     do{
@@ -124,6 +130,7 @@ class HomeTableViewController: UITableViewController {
 
                             DispatchQueue.main.async {
                                 self.tableView.reloadData()
+                                self.removeSpin(child)
                             }
                         }
                     }
@@ -177,7 +184,7 @@ class HomeTableViewController: UITableViewController {
         if let image = episode.image, let url = URL(string: image){
             
             let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-                if let error = error{
+                if let _ = error{
                     return
                 }
                 if let data = data{

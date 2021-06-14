@@ -101,7 +101,7 @@ class ForumViewController: UIViewController,UITableViewDelegate, UITableViewData
             
             
             database.collection("forumChannels").whereField("name", isEqualTo: channelName).getDocuments { (querySnapshot, error) in
-                if let error = error{
+                if let _ = error{
                     return
                 }
                 if let snapshot = querySnapshot{
@@ -128,7 +128,7 @@ class ForumViewController: UIViewController,UITableViewDelegate, UITableViewData
         let database = Firestore.firestore()
         channelDatabaseListener = database.collection("forumChannels").addSnapshotListener() { [self]
             (querySnapshot, error) in
-            if let error = error {
+            if let _ = error {
                 return
             }
             childCommentList.removeAll()
@@ -144,7 +144,7 @@ class ForumViewController: UIViewController,UITableViewDelegate, UITableViewData
                     
                     commentDatabaseListener = database.collection("forumChannels").document(id).collection("comments").order(by:"time").addSnapshotListener() {
                         (querySnapshot, error) in
-                        if let error = error {
+                        if let _ = error {
                             return
                         }
                         

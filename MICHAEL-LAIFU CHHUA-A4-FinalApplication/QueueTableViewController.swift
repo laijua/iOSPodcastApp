@@ -163,7 +163,7 @@ class QueueTableViewController: UITableViewController {
             if let image = episode?.image, let url = URL(string: image){
                 
                 let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-                    if let error = error{
+                    if let _ = error{
                         return
                     }
                     if let data = data{
@@ -198,7 +198,7 @@ class QueueTableViewController: UITableViewController {
         if let image = episode.image, let url = URL(string: image){
             
             let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-                if let error = error{
+                if let _ = error{
                     return
                 }
                 if let data = data{
